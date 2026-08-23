@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>칸반보드</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>칸반보드</h1>
+    <form id="add-form" class="add-form">
+      <input type="text" id="card-input" placeholder="새 할 일을 입력하세요" required>
+      <button type="submit">추가</button>
+    </form>
+  </header>
+
+  <div id="error-banner" class="error-banner" hidden></div>
+
+  <main class="board" id="board">
+    <section class="column" data-status="todo">
+      <h2 class="column-title">To Do <span class="count" id="count-todo">0</span></h2>
+      <div class="card-list" id="todo" ondragover="handleDragOver(event)" ondrop="handleDrop(event)"></div>
+    </section>
+
+    <section class="column" data-status="in-progress">
+      <h2 class="column-title">In Progress <span class="count" id="count-in-progress">0</span></h2>
+      <div class="card-list" id="in-progress" ondragover="handleDragOver(event)" ondrop="handleDrop(event)"></div>
+    </section>
+
+    <section class="column" data-status="done">
+      <h2 class="column-title">Done <span class="count" id="count-done">0</span></h2>
+      <div class="card-list" id="done" ondragover="handleDragOver(event)" ondrop="handleDrop(event)"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
