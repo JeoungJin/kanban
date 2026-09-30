@@ -310,3 +310,17 @@
 - `git push origin main`으로 push 완료(`cc06fa3`)
 
 ---
+
+## 19. 프롬프트
+
+> filtering out the printed API Key 의 의미
+
+### 결과
+
+- 질문에 대한 설명만 제공(코드 변경 없음)
+- 의미: 명령 실행 결과(로그·터미널 출력)에 API Key가 그대로 찍혔을 때, 그 값을 걸러내(마스킹/제거)
+  화면·대화 기록·커밋에 노출되지 않도록 한다는 뜻
+- 관련 주의: 이 프로젝트의 `supabaseClient.js`의 anon key는 공개용이지만, `service_role` 키 등
+  비밀 키는 출력·커밋 금지
+
+---
